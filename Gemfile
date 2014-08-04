@@ -30,6 +30,8 @@ gem 'devise'
 gem 'foundation-rails'
 gem 'rails_layout',        group: :development
 
+gem 'paperclip', '~> 3.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
