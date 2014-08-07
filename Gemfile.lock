@@ -49,7 +49,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.2.1)
-    foundation-rails (5.3.1.0)
+    foundation-rails (5.3.3.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     hike (1.2.3)
@@ -68,7 +68,7 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
-    paperclip (3.5.4)
+    paperclip (4.2.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
@@ -141,7 +141,7 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
-  paperclip (~> 3.0)
+  paperclip (~> 4.1)
   rails (= 4.1.2)
   rails_layout
   sass-rails (~> 4.0.3)
