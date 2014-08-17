@@ -1,0 +1,20 @@
+<div class="panel row">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @photo.title %>
+</p>
+
+<%= image_tag (@photo.image.url(:medium)) %>
+
+<p>
+  <strong>User:</strong>
+  <%= @photo.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo), :class => "button radius round tiny" %> | 
+<%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny alert radius round tiny" %> | 
+<%= link_to 'Back', photos_path, :class => "button [succes tiny radius round ]" %>
+
+</div>

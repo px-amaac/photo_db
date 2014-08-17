@@ -4,7 +4,10 @@
   <%= devise_error_messages! %>
 
   <div><%= f.label :avatar %><br />
+  <%= image_tag current_user.avatar.url(:medium) %>
+  <i>(leave blank if you don't want to change it)</i>
   <%= f.file_field :avatar %></div>
+
 
   <div><%= f.label :username %><br />
   <%= f.text_field :username %></div>

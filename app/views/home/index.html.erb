@@ -1,2 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>All Photos</h1>
+
+<div class="row">
+ <%  @photos.each do |photo| %>
+ 	<div class "row">
+		<h2>  <%= photo.title %> </h2>
+		<% if user_signed_in? && photo.user_id == current_user.id %>
+  			<%= link_to image_tag(photo.image.url(:thumb)), photo_path(photo) %>
+    		<%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button alert" %>
+    	<% else %>
+    		<%= image_tag(photo.image.url(:thumb)) %>
+		<% end %>
+	</div>
+<% end %> 
+</div>
