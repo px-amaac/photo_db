@@ -13,11 +13,13 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @tags = @photo.tags
   end
 
   # GET /photos/new
   def new
     @photo = current_user.photos.build
+    @tag = @photo.tags.build
   end
 
   # GET /photos/1/edit
@@ -27,7 +29,7 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = current_user.photos.new(photo_params)
+    @photo = current_user.photos.create(photo_params)
 
     respond_to do |format|
       if @photo.save
@@ -78,7 +80,7 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:title, :image)
+      params.require(:photo).permit(:title, :image, :tags_attributes => [:id, :key, :value, :_destroy])
     end
 
     def edit_photo_params

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_attached_file :avatar, :styles => { 
   	:medium => "300x300>", :thumb => "100x100>" }
-  has_many :photos
+  has_many :photos, :dependent => :destroy
   #validates :avatar, :attachment_presence => true
   #validates_with AttachmentSizeValidator, :attributes => :avatar, :less_than => 1.megabytes
   # Validate content type

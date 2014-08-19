@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get "tag/create"
   get 'home/index'
   root :to => 'home#index'
-  resources :photos
+  resources :photos do
+    resources :tags, only: [:create, :destroy]
+  end
 
   devise_for :users
   

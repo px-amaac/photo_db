@@ -1,5 +1,10 @@
 class Photo < ActiveRecord::Base
   belongs_to :user
+  
+  has_many :tag_photo_relationships, dependent: :destroy
+  has_many :tags, :through => :tag_photo_relationships
+  
+  accepts_nested_attributes_for :tags
 
   has_attached_file :image, :styles => { 
   	:medium => "300x300>", :thumb => "100x100>" }

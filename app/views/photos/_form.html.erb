@@ -7,6 +7,18 @@
 <div class="field">
   <%= photo.file_field :image %>
 </div>
+<h3>Tag</h3>
+<%= photo.fields_for :tags do |tag| %>
+  <div class="field">
+    <%= tag.label :key %>
+    <%= tag.text_field :key %>
+  </div>
+  <div class="field">
+    <%= tag.label :value %>
+    <%= tag.text_field :value %>
+  </div>
+<% end %>
+
 <div class="actions">
   <%= photo.submit %>
 </div>
