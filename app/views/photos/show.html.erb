@@ -18,9 +18,22 @@
 <%= link_to 'Back', photos_path, :class => "button [succes tiny radius round ]" %>
 
 <h3>Tags</h3>
+<p>           
+    <%= form_for([@photo, @tag]) do |f| %>
+        <div class="field">
+            <%= f.label :key %>
+            <%= f.text_field :key %>
+        </div>
+        <div class="field">
+            <%= f.label :value %>
+            <%= f.text_field :value %>
+        </div>
+        <%= f.submit "Tag Photo", class: "button success" %>
+    <% end %>
+</p>
 <%  @tags.each do |tag| %>
-<p><%=  tag.key %></p>
-<p><%=  tag.value %></p>
+<p>Key: <%=  tag.key %></p>
+<p>Value: <%=  tag.value %></p>
 <% end %>
 
 

@@ -1,11 +1,13 @@
-<%= form_for([@photo, @tag]) do |f| %>
-	<div class="field">
-    <%= f.label :key %>
-    <%= f.text_field :key %>
-  </div>
-  <div class="field">
-    <%= f.label :value %>
-    <%= f.text_field :value %>
-  </div>
-  <%= f.submit "Tag Photo", class: "button success" %>
-<% end %>
+<p>           
+    <%= form_for([@photo, @tag]) do |f| %>
+        <div class="field">
+            <%= f.label :key %>
+            <%= f.text_field :key %>
+        </div>
+        <div class="field">
+            <%= f.label :value %>
+            <%= f.text_field :value %>
+        </div>
+        <%= f.submit "Tag Photo", class: "button success" %>
+    <% end %>
+</p>

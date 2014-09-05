@@ -3,6 +3,6 @@ class Tag < ActiveRecord::Base
 	has_many :photos, :through => :tag_photo_relationships
 
 
-	validates :key, presence: true, length: { in: 5..25 }, uniqueness: { case_sensitive: false }
+	validates :key, presence: true, length: { in: 5..25 }
 	validates :value, presence: true, length: { in: 5..25 }
 end

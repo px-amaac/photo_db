@@ -2,7 +2,7 @@ class Photo < ActiveRecord::Base
   belongs_to :user
   
   has_many :tag_photo_relationships, dependent: :destroy
-  has_many :tags, :through => :tag_photo_relationships
+  has_many :tags, -> { distinct }, :through => :tag_photo_relationships
   
   accepts_nested_attributes_for :tags
 

@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show]
-  before_action :correct_user, only: [ :edit, :update, :destroy ]
+  before_action :correct_user, only: [ :show, :edit, :update, :destroy ]
   before_action :authenticate_user!
 
 
@@ -12,8 +12,9 @@ class PhotosController < ApplicationController
 
   # GET /photos/1
   # GET /photos/1.json
-  def show
+  def show  
     @tags = @photo.tags
+    @tag = Tag.new
   end
 
   # GET /photos/new

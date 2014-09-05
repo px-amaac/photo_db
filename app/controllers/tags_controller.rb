@@ -3,19 +3,22 @@ class TagsController < ApplicationController
 
   def create
   	@tag = @photo.tags.build(tag_params)
-  	if @tag.save
+  	if @tag.save!
   		flash[:success] = "Photo Tagged"
   		redirect_to @photo
+  	else
+  		flash[:error] = "Failed To Tag"
+  		redirect_to @photo
   	end
-  end
+  end  
 
 private
 	def set_photo
-		@photo = current_user.photos.find_by( id: params [:photo_id])
+		@photo = current_user.photos.find_by(id: params[:photo_id])
 		redirect_to root_url if @photo.nil?
 	end
 
 	def tag_params
-		params.require(:tag).permit(:id, :key, :value)
+		params.require(:tag).permit(:key, :value, :photo_id)
 	end
 end
