@@ -31,10 +31,20 @@
         <%= f.submit "Tag Photo", class: "button success" %>
     <% end %>
 </p>
-<%  @tags.each do |tag| %>
-<p>Key: <%=  tag.key %></p>
-<p>Value: <%=  tag.value %></p>
-<% end %>
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+  </tr> 
+  <%  @tags.each do |tag| %>
+    <% if tag.key != nil %>
+      <tr>
+        <td><%=  tag.key %></td>
+        <td><%=  tag.value %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
 
 
 

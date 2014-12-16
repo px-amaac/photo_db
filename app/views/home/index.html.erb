@@ -1,5 +1,13 @@
 <h1>All Photos</h1>
-
+<%= form_tag root_path, :method => 'get' do %>
+	<p>
+		<%= label :get, :searchkey, "Key Search Box" %>
+		<%= text_field_tag :searchkey, params[:searchkey] %>
+		<%= label :get, :searchvalue, "Value Search Box" %>
+		<%= text_field_tag :searchvalue, params[:searchvalue] %>
+		<%= submit_tag "Search", :name => nil %>
+	</p>
+<% end %>
 <div class="row">
  <%  @photos.each do |photo| %>
  	<div class "row">

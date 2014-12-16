@@ -2,8 +2,8 @@ class TagsController < ApplicationController
 	before_action :set_photo, only: [:create]
 
   def create
-  	@tag = @photo.tags.build(tag_params)
-  	if @tag.save!
+  	@tag = @photo.tags.create(tag_params)
+  	if @tag.save
   		flash[:success] = "Photo Tagged"
   		redirect_to @photo
   	else

@@ -12,9 +12,9 @@ class PhotosController < ApplicationController
 
   # GET /photos/1
   # GET /photos/1.json
-  def show  
+  def show
     @tags = @photo.tags
-    @tag = Tag.new
+    @tag = @photo.tags.build
   end
 
   # GET /photos/new
